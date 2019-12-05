@@ -44,9 +44,13 @@ csvfile.close()
 
 ### Reading Data
 
+```python
 %%time
 def query_data(args):
     key, metadata, record = args
 query = client.query('test', 'demo')
 query.select('pickup','dropoff','distance','fare','p_long','p_lat','d_long','d_lat')
 query.foreach(query_data)
+
+
+```
